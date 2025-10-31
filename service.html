@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SERVICE</title>
+    <link rel="icon" href="Images/Group.svg" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+  </head>
+  
+
+  <body>
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-progress"></div>
+    <!-- HTML: Sticky Scroll-to-Top Icon -->
+    <div class="scroll-top" id="scrollTopBtn">
+      &#8679;
+      <!-- Up arrow icon -->
+    </div>
+    <!-- Header -->
+    <header class="ne-header sticky-top">
+  <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container-fluid">
+
+        <!-- Brand -->
+        <a class="navbar-brand" href="index.html">
+          <img src="Images/logo.png" alt="New Era Engineers">
+        </a>
+
+        <!-- Mobile: burger + search -->
+        <div class="d-flex align-items-center ms-auto d-lg-none">
+          <button class="navbar-toggler icon-btn" type="button"
+                  data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
+            <i class="bi bi-list icon-size"></i>
+          </button>
+          <button id="neSearchToggleMobile" class="btn btn-link icon-btn icon-gap" type="button">
+            <i class="bi bi-search icon-size"></i>
+          </button>
+        </div>
+
+        <!-- Nav -->
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav ms-auto align-items-lg-center">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="Aboutus.html">About Us</a></li>
+
+            <!-- SOLUTIONS -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle d-flex align-items-center gap-1"
+                 data-bs-toggle="dropdown">
+                Solutions <i class="bi bi-chevron-down small"></i>
+              </a>
+              <ul class="dropdown-menu solutionsDropdown">
+                <li><a class="dropdown-item  fw-semibold" href="Abrasive.html">Abrasive</a></li>
+                <li><a class="dropdown-item fw-semibold" href="Corrosive.html">Corrosive</a></li>
+                <li><a class="dropdown-item fw-semibold" href="Explosive.html">Explosive</a></li>
+                <li><a class="dropdown-item fw-semibold" href="Sanitary-(CIP).html">Sanitary (CIP)</a></li>
+                <li><a class="dropdown-item fw-semibold" href="Sanitary-(SIP).html">Sanitary (SIP)</a></li>
+                <li><a class="dropdown-item fw-semibold" href="Shear-Sensitive-Slurry.html">Shear Sensitive Slurry</a></li>
+                <li><a class="dropdown-item fw-semibold" href="Sludge.html">Sludge</a></li>
+                <li><a class="dropdown-item fw-semibold" href="Viscous.html">Viscous</a></li>
+              </ul>
+            </li>
+
+            <!-- PRODUCTS -->
+            <li class="nav-item dropdown position-static">
+              <a class="nav-link dropdown-toggle d-flex align-items-center gap-1"
+                 data-bs-toggle="dropdown">
+                Products <i class="bi bi-chevron-down small"></i>
+              </a>
+
+              <div class="dropdown-menu mega-menu">
+                <div class="row g-0">
+                  <div class="col-lg-4 col-md-6">
+                    <a href="#" class="fw-semibold">Air Operated Double Diaphragm Pump Sanitary Pumps in SS304 (CF8) & SS316 (CF8M)</a>
+                    <a href="#" class="fw-semibold">Air Operated Diaphragm Pumps in Aluminium, PP, PVDF, TEFLON & SS316 (CF8M)</a>
+                    <a href="#" class="fw-semibold">Chemical CI, WCB (CS) & SS304 (CF8) & SS316 (CF8M) Process Pumps</a>
+                    <a href="#" class="fw-semibold">Chemical PP, and UHMWPE Horizontal Pumps</a>
+                    <a href="#" class="fw-semibold">Chemical PP and UHMWPE Vertical Glandless Pumps</a>
+                    <a href="#" class="fw-semibold">Chemical SS304 (CF8) & SS316 (CF8M) Magnetic Drive Pumps</a>
+                  </div>
+
+                  <div class="col-lg-4 col-md-6">
+                    <a href="#" class="fw-semibold">Dosing & Metering Pumps PP, PVDF, TEFLON & SS316 (CF8M)</a>
+                    <a href="#" class="fw-semibold">Drum/Barrel/Carboy Pumps in PP, PVDF, MS & SS316 (CF8M)</a>
+                    <a href="#" class="fw-semibold">External Gear Pumps CI, WCB (CS) & SS304 (CF8) & SS316 (CF8M)</a>
+                    <a href="#" class="fw-semibold">FDA – Centrifugal Sanitary Pumps in SS304 (CF8) & SS316 (CF8M)</a>
+                    <a href="#" class="fw-semibold">Horizontal & Vertical Multistage Pumps in CI, SS304 (CF8) & SS316 (CF8M)</a>
+                    <a href="#" class="fw-semibold">Hose/Peristaltic Pumps in RUBBER OR PTFE</a>
+                  </div>
+
+                  <div class="col-lg-4 col-md-6">
+                    <a href="#" class="fw-semibold">Internal Gear Pump in CI, SS304 (CF8) & SS316 (CF8M)</a>
+                    <a href="#" class="fw-semibold">Non-Clog Horizontal Self Priming Pumps in CI, SS304 (CF8) & SS316 (CF8M) and Alloys</a>
+                    <a href="#" class="fw-semibold">Non-Clog Vertical Submersible Pumps in CI, SS304 (CF8) & SS316 (CF8M)</a>
+                    <a href="#" class="fw-semibold">PP & PVDF Magnetic Drive Pumps</a>
+                    <a href="#" class="fw-semibold">Rotary Lobe Pumps in CI, SS304 (CF8) & SS316 (CF8M)</a>
+                    <a href="#" class="fw-semibold">Screw Pumps in CI, SS304 (CF8) & SS316 (CF8M)</a>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!-- INDUSTRIES -->
+            <li class="nav-item dropdown position-static">
+              <a class="nav-link dropdown-toggle d-flex align-items-center gap-1"
+                 data-bs-toggle="dropdown">
+                Industries <i class="bi bi-chevron-down small"></i>
+              </a>
+
+              <div class="dropdown-menu mega-menu">
+                <div class="row g-0">
+                  <div href="#" class="col-lg-3 col-md-4"><a class="fw-semibold">Automobile Industry</a></div>
+                  <div href="#" class="col-lg-3 col-md-4"><a class="fw-semibold">Chemical Industry</a></div>
+                  <div href="#" class="col-lg-3 col-md-4"><a class="fw-semibold">Graphic Industry</a></div>
+                  <div href="#" class="col-lg-3 col-md-4"><a class="fw-semibold">Paper, Packaging & Glue Industry</a></div>
+                  <div href="#" class="col-lg-3 col-md-4"><a class="fw-semibold">Beverage Industry</a></div>
+                  <div href="#" class="col-lg-3 col-md-4"><a class="fw-semibold">Food Industry</a></div>
+                  <div href="#" class="col-lg-3 col-md-4"><a class="fw-semibold">Mechanical & Metallurgical Industry</a></div>
+                  <div href="#" class="col-lg-3 col-md-4"><a class="fw-semibold">Pharma Industry</a></div>
+                  <div href="#" class="col-lg-3 col-md-4"><a class="fw-semibold">Biodiesel Industry</a></div>
+                  <div href="#" class="col-lg-3 col-md-4"><a class="fw-semibold">Galvanic & Electronic Industry</a></div>
+                  <div href="#" class="col-lg-3 col-md-4"><a class="fw-semibold">Oil & Gas Industry</a></div>
+                  <div href="#" class="col-lg-3 col-md-4"><a class="fw-semibold">Textile & Leather Industry</a></div>
+                  <div href="#" class="col-lg-3 col-md-4"><a class="fw-semibold">Ceramic, Stone & Marble Industry</a></div>
+                  <div href="#" class="col-lg-3 col-md-4"><a class="fw-semibold">Gold Processing Industry</a></div>
+                  <div href="#" class="col-lg-3 col-md-4"><a class="fw-semibold">Paint Industry</a></div>
+                  <div href="#" class="col-lg-3 col-md-4"><a class="fw-semibold">Waste Water Industry</a></div>
+                </div>
+              </div>
+            </li>
+
+            <li class="nav-item"><a class="nav-link ne-active" href="service.html">Service</a></li>
+            <li class="nav-item"><a class="nav-link" href="Contact-us.html">Contact Us</a></li>
+            <li class="nav-item"><a class="nav-link" href="Bank-Statutory.html">Bank & Statutory</a></li>
+
+            <!-- Desktop Search -->
+            <li class="nav-item ms-lg-2 d-none d-lg-block">
+              <button id="neSearchToggle" class="btn btn-link nav-link p-0 icon-btn" type="button"><i class="bi bi-search"></i></button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Slide-down Search -->
+    <div class="search-box" id="neSearchBox">
+          <div class="inner text-center">
+            <input
+              id="neSearchInput"
+              class="search-input"
+              type="text"
+              placeholder="Search products, pumps, motors..."
+            />
+            <div class="list-group mt-3" id="neSearchResults" role="listbox" aria-label="Search suggestions"></div>
+
+          </div>
+        </div>
+  </div>
+</header>
+
+
+   
+
+    
+
+    <!-- Have Any QUERIES? -->
+    <section class="neeq-section animate-item">
+      <div class="container">
+
+        <div class="row align-items-start">
+          <!-- Left copy -->
+          <div class="col-lg-6">
+            <div class="neeq-eyebrow">We’ re here to help you</div>
+            <div class="neeq-rule" aria-hidden="true"></div>
+            <h1 class="neeq-title fw-medium">
+              <span class="neeq-bold">HAVE</span> ANY<br />QUERIES?
+            </h1>
+            <p class="neeq-copy">
+              Our team of specialists are ready to assist you. Whether you need support with product selection, technical specifications, installation guidance, or customized pumping solutions, we’re just a message away.
+            </p>
+            <p class="neeq-copy">
+                As one of India’s leading distributors of world-renowned pump brands, we ensure that every inquiry is handled with expertise, speed, and precision.
+            </p>
+            <p class="neeq-copy">
+                Reach out today, let’s help you find the right pump system for your application.
+          </div>
+
+          <!-- Right form -->
+          <div class="col-lg-6">
+            <h1 class="neeq-title fw-semibold pb-4 text-secondary">SERVICE REQUEST FORM</h1>
+           <!-- Service Request Form -->
+<form class="neeq-form" id="serviceForm" action="service.php" method="post" novalidate>
+  <!-- Email -->
+  <div class="mb-3">
+    <label for="sr-email" class="form-label">Email <span aria-hidden="true">*</span></label>
+    <input type="email" class="form-control" id="sr-email" name="email"
+           placeholder="name@example.com" required maxlength="80" />
+    <small class="invalid-msg"></small>
+  </div>
+
+  <!-- Company Name -->
+  <div class="mb-3">
+    <label for="sr-company" class="form-label">Company Name <span aria-hidden="true">*</span></label>
+    <input type="text" class="form-control" id="sr-company" name="company"
+           placeholder="Your company" required minlength="2" maxlength="80"
+           pattern="^[A-Za-z0-9&().,'\-\s]{2,80}$" />
+    <small class="invalid-msg"></small>
+  </div>
+
+  <!-- Contact Person Name -->
+  <div class="mb-3">
+    <label for="sr-contact" class="form-label">Contact Person Name <span aria-hidden="true">*</span></label>
+    <input type="text" class="form-control" id="sr-contact" name="contact_person"
+           placeholder="Full name" required minlength="2" maxlength="60"
+           pattern="^[A-Za-z.'\-\s]{2,60}$" />
+    <small class="invalid-msg"></small>
+  </div>
+
+  <!-- Phone -->
+  <div class="mb-3">
+    <label for="sr-phone" class="form-label">Phone <span aria-hidden="true">*</span></label>
+    <input type="tel" class="form-control" id="sr-phone" name="phone"
+           placeholder="+91 9876543210" required
+           inputmode="tel" maxlength="15"
+           pattern="^(\+?\d{1,3}[-\s]?)?\d{10}$" />
+    <small class="invalid-msg"></small>
+  </div>
+
+  <!-- WhatsApp No. -->
+  <div class="mb-3">
+    <label for="sr-whatsapp" class="form-label">WhatsApp No. <span aria-hidden="true">*</span></label>
+    <input type="tel" class="form-control" id="sr-whatsapp" name="whatsapp"
+           placeholder="+91 9876543210" required
+           inputmode="tel" maxlength="20"
+           pattern="^(\+?\d{1,3}[-\s]?)?\d{10}$" />
+    <small class="invalid-msg"></small>
+  </div>
+
+  <!-- Product Name -->
+  <div class="mb-3">
+    <label for="sr-product" class="form-label">Product Name <span aria-hidden="true">*</span></label>
+    <input type="text" class="form-control" id="sr-product" name="product_name"
+           placeholder="e.g., Chemical Process Pump" required minlength="2" maxlength="80" />
+    <small class="invalid-msg"></small>
+  </div>
+
+  <!-- Model Number -->
+  <div class="mb-3">
+    <label for="sr-model" class="form-label">Model Number <span aria-hidden="true">*</span></label>
+    <input type="text" class="form-control" id="sr-model" name="model_number"
+           placeholder="e.g., NEEQ-HCP-120" required maxlength="40"
+           pattern="^[A-Za-z0-9\-\/\s]{1,40}$" />
+    <small class="invalid-msg"></small>
+  </div>
+
+  <!-- Serial Number -->
+  <div class="mb-3">
+    <label for="sr-serial" class="form-label">Pump / Motor / Gearbox Serial No. <span aria-hidden="true">*</span></label>
+    <input type="text" class="form-control" id="sr-serial" name="serial_number"
+           placeholder="e.g., PMG/23-45892" required maxlength="40"
+           pattern="^[A-Za-z0-9\/\-\s]{3,40}$" />
+    <small class="invalid-msg"></small>
+  </div>
+
+  <!-- Tax Invoice Number -->
+  <div class="mb-3">
+    <label for="sr-invoice" class="form-label">Tax Invoice Number <span aria-hidden="true">*</span></label>
+    <input type="text" class="form-control" id="sr-invoice" name="invoice_number"
+           placeholder="e.g., INV-2025-000123" required maxlength="40"
+           pattern="^[A-Za-z0-9\/\-\s]{3,40}$" />
+    <small class="invalid-msg"></small>
+  </div>
+
+  <!-- Tax Invoice Date -->
+  <div class="mb-3">
+    <label for="sr-invoice-date" class="form-label">Tax Invoice Date <span aria-hidden="true">*</span></label>
+    <input type="date" class="form-control" id="sr-invoice-date" name="invoice_date" required />
+    <small class="hint">Use your browser’s date picker. (Shown as dd-mm-yyyy on submission UI.)</small>
+    <small class="invalid-msg"></small>
+  </div>
+
+  <!-- Complaint / Issue -->
+  <div class="mb-4">
+    <label for="sr-issue" class="form-label">Complaint / Issue <span aria-hidden="true">*</span></label>
+    <textarea class="form-control" id="sr-issue" name="issue"
+              placeholder="Describe the problem briefly (symptoms, when it started, error codes)"
+              required minlength="10" maxlength="500" rows="4"></textarea>
+    <small class="invalid-msg"></small>
+  </div>
+
+  <button type="submit" class="btn neeq-btn">Submit</button>
+</form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+
+<!-- Sign Up Now -->
+<section class="mt-5 animate-item">
+  <h1 class="text-center">Sign Up Now</h1>
+  <p class="text-center">
+    To get regular updates about <br> latest offers and product launches!
+  </p>
+
+  <div class="container" style="font-family: 'Lato'">
+    <form action="signup.php" method="POST" onsubmit="return validateForm()">
+      <center>
+        <div class="d-flex justify-content-between sign-up" style="max-width:600px">
+          
+          <input
+            type="email"
+            name="email"
+            id="emailInput"
+            placeholder="Enter Your Email"
+            style="padding: 8px; border: none; border-radius: 5px; width: 55%"
+            required
+          />
+
+          <button type="submit" class="signup-btn text-dark">
+            Submit
+          </button>
+        </div>
+
+        <div class="gdpr-check justify-content-md-center justify-content-start mt-2">
+          <input type="checkbox" id="gdpr" required />
+          <label for="gdpr">Accept GDPR Terms</label>
+        </div>
+      </center>
+    </form>
+  </div>
+</section>
+
+
+    <!-- Footer Section -->
+    <footer class="">
+      <div class="container">
+        <div class="row">
+          <div class="col-8 col-md-3 col-lg-3">
+            <img
+              style="box-shadow: 0px 5px 10px rgba(23, 23, 23, 0.3)"
+              src="Images/f-logo.png"
+              alt="Logo"
+              class="img-fluid w-50"
+              srcset=""
+            />
+          </div>
+          <div class="col-6 col-md-5 col-lg-3">
+            <p>SiteMap</p>
+            <ul class="sitemap-ul">
+              <li>About</li>
+              <li>Contact Us</li>
+              <li>Bank Details</li>
+            </ul>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3">
+            <p>Our Service</p>
+            <ul class="sitemap-ul">
+              <li>Service Request</li>
+              <li>Enquiry</li>
+              <li>Detailed Enquiry</li>
+            </ul>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+            <p>Contact Information</p>
+            <div>
+              <div class="d-flex">
+                <img
+                  src="Images/pin-01.png"
+                  width="22px"
+                  class="mt-2 me-2"
+                  height="22px"
+                  alt="Pin"
+                />
+                <p>
+                  No.96-A, TTK Road,, Alwarpet, Chennai, Tamil Nadu
+                  600018,INDIA.
+                </p>
+              </div>
+
+              <div class="d-flex">
+                <img
+                  src="Images/phone.png"
+                  width="22px"
+                  class="mt-2 me-2"
+                  height="22px"
+                  alt="Phone"
+                />
+                <p class="pt-1">
+                  +91-44-4301 2183 OR <br />
+                  +91-7200627289
+                </p>
+              </div>
+              <div class="d-flex">
+                <img
+                  src="Images/mail-01.png"
+                  width="22px"
+                  class="mt-2 me-2"
+                  height="22px"
+                  alt="Mail"
+                />
+                <p class="pt-1">sales@neweraengineers.com</p>
+              </div>
+              <div class="d-flex">
+                <img
+                  src="Images/clock.png"
+                  width="22px"
+                  class="mt-2 me-2"
+                  height="22px"
+                  alt="Clock"
+                />
+                <p class="pt-1">Mon - Fri / 10:00 AM - 5:00 PM</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-fluid Copyright">
+        <div class="container d-md-flex justify-content-evenly">
+          <p class="text-md-center text-start">
+            © Copyright – new era engineers & Traders
+          </p>
+          <div>
+            <img src="Images/Facebook.png" class="img-fluid" alt="Facebook" />
+            <img src="Images/Instagram.png" class="img-fluid" alt="Instagram" />
+            <img src="Images/LinkedIn.png" class="img-fluid" alt="LinkedIn" />
+            <img src="Images/Whatsapp.png" class="img-fluid" alt="Whatsapp" />
+          </div>
+          <p>Terms & Conditions | Privacy Policy</p>
+        </div>
+      </div>
+    </footer>
+    <script src="js/Animation-Script.js"></script>
+    <script src="js/Progressbar.js"></script>
+    <script src="js/Header.js"></script>
+    <script src="js/sign-up.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      
+function validateForm() {
+  const email = document.getElementById("emailInput").value.trim();
+  const gdpr = document.getElementById("gdpr").checked;
+
+  if (email === "") {
+    alert("Please enter your email.");
+    return false;
+  }
+
+  if (!gdpr) {
+    alert("Please accept GDPR terms.");
+    return false;
+  }
+
+  return true;
+}
+
+
+    </script>
+
+    <!--UP-ARROW JavaScript -->
+    <script>
+      const scrollBtn = document.getElementById("scrollTopBtn");
+
+      // Show button after scrolling down 100px
+      window.onscroll = function () {
+        if (
+          document.body.scrollTop > 100 ||
+          document.documentElement.scrollTop > 100
+        ) {
+          scrollBtn.style.display = "block";
+        } else {
+          scrollBtn.style.display = "none";
+        }
+      };
+
+      // Scroll to top when clicked
+      scrollBtn.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      });
+
+      // Hide initially
+      scrollBtn.style.display = "none";
+    </script>
+
+    <!-- Footer Stays bottom script -->
+    <script>
+      (function () {
+        function adjustFooter() {
+          const footer = document.querySelector("footer");
+          if (!footer) return;
+
+          const bodyHeight = document.body.offsetHeight;
+          const windowHeight = window.innerHeight;
+
+          if (bodyHeight < windowHeight) {
+            footer.style.position = "absolute";
+            footer.style.bottom = "0";
+            footer.style.width = "100%";
+          } else {
+            footer.style.position = "static";
+          }
+        }
+
+        window.addEventListener("load", adjustFooter);
+        window.addEventListener("resize", adjustFooter);
+      })();
+    </script>
+
+    
+
+
+    <!-- service -form script -->
+
+<script>
+(function () {
+  const form = document.getElementById('serviceForm');
+  const msgs = {
+    valueMissing: 'This field is required.',
+    typeMismatch: 'Please enter a valid value.',
+    patternMismatch: 'Please check the format.',
+    tooShort: 'Too short.',
+    tooLong: 'Too long.'
+  };
+
+  // map input id -> backend field key (must match PHP keys)
+  const fieldKey = {
+    'sr-email': 'email',
+    'sr-company': 'company',
+    'sr-contact': 'contact_person',
+    'sr-phone': 'phone',
+    'sr-whatsapp': 'whatsapp',
+    'sr-product': 'product_name',
+    'sr-model': 'model_number',
+    'sr-serial': 'serial_number',
+    'sr-invoice': 'invoice_number',
+    'sr-invoice-date': 'invoice_date',
+    'sr-issue': 'issue'
+  };
+
+  // attach realtime validation
+  Array.from(form.elements).forEach((el) => {
+    if (!el.matches('.form-control')) return;
+    el.addEventListener('input', () => validateField(el));
+    el.addEventListener('blur', () => validateField(el));
+  });
+
+  function clearErrors() {
+    Object.keys(fieldKey).forEach(id => {
+      const input = document.getElementById(id);
+      const small = input?.parentElement.querySelector('.invalid-msg');
+      input?.classList.remove('is-invalid', 'is-valid');
+      if (small) { small.textContent = ''; small.style.color=''; }
+    });
+  }
+
+  function validateField(el) {
+    const small = el.parentElement.querySelector('.invalid-msg');
+    el.classList.remove('is-invalid','is-valid');
+    if (small) { small.textContent = ''; small.style.color=''; }
+
+    if (['text','email','tel'].includes(el.type)) {
+      el.value = el.value.replace(/^\s+/, ''); // trimStart
+    }
+    if (!el.checkValidity()) {
+      el.classList.add('is-invalid');
+      const v = el.validity;
+      let m = msgs.valueMissing;
+      if (v.typeMismatch)   m = msgs.typeMismatch;
+      if (v.patternMismatch) m = msgs.patternMismatch;
+      if (v.tooShort)       m = msgs.tooShort;
+      if (v.tooLong)        m = msgs.tooLong;
+      if (small) { small.textContent = m; small.style.color = '#b00020'; }
+      return false;
+    }
+    if (el.value.length) el.classList.add('is-valid');
+    return true;
+  }
+
+  // normalise phone-like fields on blur
+  ['sr-phone','sr-whatsapp'].forEach(id => {
+    const el = document.getElementById(id);
+    el.addEventListener('blur', () => {
+      el.value = el.value.replace(/\s+/g,' ').trim();
+    });
+  });
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    clearErrors();
+
+    // run client-side validation first
+    let ok = true;
+    Array.from(form.elements).forEach((el) => {
+      if (el.matches('.form-control')) ok = validateField(el) && ok;
+    });
+
+    // custom rule: phone ≠ whatsapp
+    const phone = document.getElementById('sr-phone').value.replace(/\D/g,'');
+    const wa    = document.getElementById('sr-whatsapp').value.replace(/\D/g,'');
+    if (phone && wa && phone === wa) {
+      ok = false;
+      const waEl = document.getElementById('sr-whatsapp');
+      const sm = waEl.parentElement.querySelector('.invalid-msg');
+      waEl.classList.add('is-invalid');
+      if (sm) { sm.textContent = 'WhatsApp number should not be identical to Phone.'; sm.style.color='#b00020'; }
+    }
+
+    if (!ok) {
+      const firstInvalid = form.querySelector('.is-invalid');
+      firstInvalid?.focus();
+      return;
+    }
+
+    // submit via fetch to the form's action (service.php)
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalText = submitBtn.textContent;
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Submitting…';
+
+    try {
+      const fd = new FormData(form);
+      const res = await fetch(form.action, { method: 'POST', body: fd });
+      const data = await res.json().catch(() => ({}));
+
+      // backend validation errors (422) -> show inline
+      if (res.status === 422 && data.errors) {
+        Object.entries(fieldKey).forEach(([id, key]) => {
+          if (!data.errors[key]) return;
+          const input = document.getElementById(id);
+          const small = input?.parentElement.querySelector('.invalid-msg');
+          input?.classList.add('is-invalid');
+          if (small) { small.textContent = data.errors[key]; small.style.color='#b00020'; }
+        });
+        const firstInvalid = form.querySelector('.is-invalid');
+        firstInvalid?.focus();
+        return;
+      }
+
+      if (!res.ok || !data.ok) {
+        throw new Error(data.error || 'Submission failed. Please try again.');
+      }
+
+      // Success UI
+      showSuccessModal();   // uses your existing modal helper
+      form.reset();
+      Array.from(form.querySelectorAll('.is-valid')).forEach(el => el.classList.remove('is-valid'));
+    } catch (err) {
+      alert(err.message || 'Something went wrong.');
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalText;
+    }
+  });
+
+  // minimal success toast (keeps your original behavior)
+  function showSuccessModal() {
+    let modal = document.querySelector('.success-modal');
+    if (!modal) {
+      modal = document.createElement('div');
+      modal.className = 'success-modal';
+      modal.textContent = 'Form submitted successfully!';
+      document.body.appendChild(modal);
+    }
+    modal.classList.add('show');
+    setTimeout(() => modal.classList.remove('show'), 3000);
+  }
+})();
+</script>
+
+
+
+
+
+
+  </body>
+</html>
