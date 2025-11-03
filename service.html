@@ -313,6 +313,21 @@
   <button type="submit" class="btn neeq-btn">Submit</button>
 </form>
           </div>
+
+<div class="position-fixed  end-0 p-3" style="z-index:1080;top :80%;">
+  <div id="appToast" class="toast align-items-center text-bg-info border-0" role="status" aria-live="polite" aria-atomic="true">
+    <div class="d-flex">
+      <div class="toast-body">
+        <strong class="toast-title d-block mb-1">Info</strong>
+        <span class="toast-msg">Working…</span>
+      </div>
+      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+  </div>
+</div>
+
+
+
         </div>
       </div>
     </section>
@@ -545,6 +560,8 @@ function validateForm() {
 <script>
 (function () {
   const form = document.getElementById('serviceForm');
+  if (!form) return;
+
   const msgs = {
     valueMissing: 'This field is required.',
     typeMismatch: 'Please enter a valid value.',
@@ -553,7 +570,7 @@ function validateForm() {
     tooLong: 'Too long.'
   };
 
-  // map input id -> backend field key (must match PHP keys)
+  // id -> backend field key (must match PHP keys)
   const fieldKey = {
     'sr-email': 'email',
     'sr-company': 'company',
@@ -568,11 +585,31 @@ function validateForm() {
     'sr-issue': 'issue'
   };
 
-  // attach realtime validation
+  // ---------- Toast ----------
+  function showToast(title, message, type) {
+    const el = document.getElementById('appToast');
+    if (!el || !window.bootstrap) {
+      // Fallback if toast markup/JS missing
+      alert(`${title ? title + ': ' : ''}${message || ''}`);
+      return;
+    }
+    el.classList.remove('text-bg-success','text-bg-danger','text-bg-info','text-bg-warning');
+    el.classList.add(
+      type === 'success' ? 'text-bg-success' :
+      type === 'error'   ? 'text-bg-danger'  :
+      type === 'warn'    ? 'text-bg-warning' : 'text-bg-info'
+    );
+    el.querySelector('.toast-title').textContent = title || 'Notice';
+    el.querySelector('.toast-msg').textContent   = message || '';
+    const t = bootstrap.Toast.getOrCreateInstance(el, { autohide: true, delay: 4000 });
+    t.show();
+  }
+
+  // ---------- Realtime validation ----------
   Array.from(form.elements).forEach((el) => {
     if (!el.matches('.form-control')) return;
     el.addEventListener('input', () => validateField(el));
-    el.addEventListener('blur', () => validateField(el));
+    el.addEventListener('blur',  () => validateField(el));
   });
 
   function clearErrors() {
@@ -589,17 +626,17 @@ function validateForm() {
     el.classList.remove('is-invalid','is-valid');
     if (small) { small.textContent = ''; small.style.color=''; }
 
-    if (['text','email','tel'].includes(el.type)) {
+    if (['text','email','tel','textarea'].includes(el.type) || el.tagName === 'TEXTAREA') {
       el.value = el.value.replace(/^\s+/, ''); // trimStart
     }
     if (!el.checkValidity()) {
       el.classList.add('is-invalid');
       const v = el.validity;
       let m = msgs.valueMissing;
-      if (v.typeMismatch)   m = msgs.typeMismatch;
-      if (v.patternMismatch) m = msgs.patternMismatch;
-      if (v.tooShort)       m = msgs.tooShort;
-      if (v.tooLong)        m = msgs.tooLong;
+      if (v.typeMismatch)     m = msgs.typeMismatch;
+      if (v.patternMismatch)  m = msgs.patternMismatch;
+      if (v.tooShort)         m = msgs.tooShort;
+      if (v.tooLong)          m = msgs.tooLong;
       if (small) { small.textContent = m; small.style.color = '#b00020'; }
       return false;
     }
@@ -607,10 +644,10 @@ function validateForm() {
     return true;
   }
 
-  // normalise phone-like fields on blur
+  // normalize phone-like fields on blur
   ['sr-phone','sr-whatsapp'].forEach(id => {
     const el = document.getElementById(id);
-    el.addEventListener('blur', () => {
+    el?.addEventListener('blur', () => {
       el.value = el.value.replace(/\s+/g,' ').trim();
     });
   });
@@ -619,7 +656,7 @@ function validateForm() {
     e.preventDefault();
     clearErrors();
 
-    // run client-side validation first
+    // client-side validation first
     let ok = true;
     Array.from(form.elements).forEach((el) => {
       if (el.matches('.form-control')) ok = validateField(el) && ok;
@@ -638,11 +675,12 @@ function validateForm() {
 
     if (!ok) {
       const firstInvalid = form.querySelector('.is-invalid');
-      firstInvalid?.focus();
+      firstInvalid?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      firstInvalid?.focus({ preventScroll: true });
       return;
     }
 
-    // submit via fetch to the form's action (service.php)
+    // submit via fetch
     const submitBtn = form.querySelector('button[type="submit"]');
     const originalText = submitBtn.textContent;
     submitBtn.disabled = true;
@@ -650,10 +688,12 @@ function validateForm() {
 
     try {
       const fd = new FormData(form);
-      const res = await fetch(form.action, { method: 'POST', body: fd });
-      const data = await res.json().catch(() => ({}));
+      const res = await fetch(form.action || 'service.php', { method: 'POST', body: fd });
 
-      // backend validation errors (422) -> show inline
+      let data = {};
+      try { data = await res.json(); } catch (_) {}
+
+      // 422 validation errors -> show inline
       if (res.status === 422 && data.errors) {
         Object.entries(fieldKey).forEach(([id, key]) => {
           if (!data.errors[key]) return;
@@ -663,40 +703,33 @@ function validateForm() {
           if (small) { small.textContent = data.errors[key]; small.style.color='#b00020'; }
         });
         const firstInvalid = form.querySelector('.is-invalid');
-        firstInvalid?.focus();
-        return;
+        firstInvalid?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        firstInvalid?.focus({ preventScroll: true });
       }
 
-      if (!res.ok || !data.ok) {
-        throw new Error(data.error || 'Submission failed. Please try again.');
-      }
+      // Show toast from backend (or fallback)
+      const toast = data.toast || {
+        type: res.ok ? 'success' : 'error',
+        title: res.ok ? 'Submitted Successfully' : 'Error',
+        message: res.ok ? 'Thank you! Our team will reach you soon.' : `Request failed (${res.status}).`
+      };
+      showToast(toast.title, toast.message, toast.type);
 
-      // Success UI
-      showSuccessModal();   // uses your existing modal helper
-      form.reset();
-      Array.from(form.querySelectorAll('.is-valid')).forEach(el => el.classList.remove('is-valid'));
+      if (data.ok) {
+        form.reset();
+        form.querySelectorAll('.is-valid').forEach(el => el.classList.remove('is-valid'));
+      }
     } catch (err) {
-      alert(err.message || 'Something went wrong.');
+      showToast('Network error', 'Please check your connection and try again.', 'error');
     } finally {
       submitBtn.disabled = false;
       submitBtn.textContent = originalText;
     }
   });
-
-  // minimal success toast (keeps your original behavior)
-  function showSuccessModal() {
-    let modal = document.querySelector('.success-modal');
-    if (!modal) {
-      modal = document.createElement('div');
-      modal.className = 'success-modal';
-      modal.textContent = 'Form submitted successfully!';
-      document.body.appendChild(modal);
-    }
-    modal.classList.add('show');
-    setTimeout(() => modal.classList.remove('show'), 3000);
-  }
 })();
 </script>
+
+
 
 
 

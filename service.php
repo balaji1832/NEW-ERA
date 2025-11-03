@@ -135,7 +135,7 @@ if ($stmt->execute()) {
   echo json_encode([
     'ok'=>true,
     'message'=>'Saved',
-    'toast'=>['type'=>'success','title'=>'Submitted','message'=>'Your request has been saved.']
+    'toast'=>['type'=>'success','title'=>'Submitted','message'=>'Your request has been Submitted.']
   ]);
 } else {
   // duplicate-ish hints (if you added UNIQUE indexes)
