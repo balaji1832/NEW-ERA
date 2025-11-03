@@ -702,10 +702,18 @@ p{
 }
 .Serving-card:hover{
   transform: translateY(-10px);
-  box-shadow: -10px 10px 10px rgba(34, 34, 34,0.3);
+  box-shadow: -10px 10px 10px rgba(34, 34, 34,0.5);
 }
 }
 
+
+
+/* Benefits -industries styling */
+.shadow-soft { box-shadow: -3px 10px 15px rgba(0,0,0,0.2); }
+  /* Ensure equal height feel at each breakpoint */
+  .benefit-card { min-height: 110px; }            /* base */
+  @media (min-width: 576px) { .benefit-card { min-height: 120px; } }
+  @media (min-width: 768px) { .benefit-card { min-height: 130px; } }
 
 
 /* signature Expertise */
@@ -1270,9 +1278,9 @@ footer{
 
 /* Title */
 .prod-title{
-  font-weight:600;
+  font-weight:700;
   text-align:center;
-  font-size:14px;
+  font-size:15px;
   line-height:1.45;
   min-height:3.8em;           /* keep row heights even on grid */
   display:flex;
@@ -1343,5 +1351,58 @@ footer{
 }
 
 
+
+
+/* industries carousel slides */
+/* Unique Namespace */
+.swiper-slide{
+  border: 1px solid rgba(0,0,0,.1);
+}
+.newera-chem-area {
+  padding: 60px 0;
+  background: #f8f9fa;
+  
+}
+
+/* Card Box Shadow */
+.newera-chem-card {
+  border-radius: 8px;
+  background: #fff;
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: -10px 2px 6px rgba(225, 222, 216, 0.1);
+  
+}
+
+/* Text Styling */
+.newera-chem-card p {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* Orange line */
+.newera-chem-line {
+  height: 2px;
+  background: #CA661B;
+}
+
+/* Navigation buttons */
+.newera-chem-navbtn {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+  border: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Keep slide height natural */
+.newera-chem-swiper .swiper-slide {
+  height: auto;
+}
 
 
