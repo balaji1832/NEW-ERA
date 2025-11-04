@@ -30,6 +30,8 @@
     /* Header Container */
     header{
       font-family: "Raleway";
+      position: sticky !important;
+      top: 0px !important;
     }
     .ne-header {
        /* Frosted glass with gradient */
