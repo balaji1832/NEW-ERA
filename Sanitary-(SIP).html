@@ -28,6 +28,7 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://unpkg.com/swiper@10/swiper-bundle.min.css"/>
 
     <!-- Small safety tweak so product cards raise above neighbors without moving -->
     <style>
@@ -817,6 +818,55 @@
       </div>
     </section>
 
+      <!-- Recommendation Plans -->
+    <section class="text-center animate-item">
+  <h2 class="fw-semibold text-dark text-uppercase mb-2">Recommended Installations</h2>
+  <div style="width:200px; height:3px; background:#CA661B; margin:0 auto;"></div>
+
+  <div class="container mt-4">
+    <!-- ===== Desktop: 2 in a row ===== -->
+    <div class="d-none d-lg-block">
+      <div class="ri-grid d-flex justify-content-center">
+        <img src="Images/Negative Lift.svg" alt="Negative Lift" class="img-fluid ri-img" >
+        <img src="Images/Drum Transfer.svg" alt="Drum Transfer" class="img-fluid ri-img" >
+        <img src="Images/Positive Suction Head.svg" alt="Positive Suction Head" class="img-fluid ri-img" >
+        <img src="Images/Immersed.svg" alt="Immersed" class="img-fluid ri-img" >
+        <img src="Images/Twin Suction and Delivery Manifold.svg" alt="Twin Suction and Delivery Manifold" class="img-fluid ri-img" >
+        <img src="Images/Twin Suction Manifold-c.svg" alt="Twin Suction Manifold" class="img-fluid ri-img" >
+      </div>
+    </div>
+
+    <!-- ===== Tablet & Mobile: Swiper ===== -->
+    <div class="d-lg-none">
+      <div class="swiper" id="ri-swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide d-flex justify-content-center">
+            <img src="Images/Negative Lift.svg" alt="Negative Lift" class="img-fluid" style="max-width:420px;">
+          </div>
+          <div class="swiper-slide d-flex justify-content-center">
+            <img src="Images/Drum Transfer.svg" alt="Drum Transfer" class="img-fluid" style="max-width:420px;">
+          </div>
+          <div class="swiper-slide d-flex justify-content-center">
+            <img src="Images/Positive Suction Head.svg" alt="Positive Suction Head" class="img-fluid" style="max-width:420px;">
+          </div>
+          <div class="swiper-slide d-flex justify-content-center">
+            <img src="Images/Immersed.svg" alt="Immersed" class="img-fluid" style="max-width:420px;">
+          </div>
+          <div class="swiper-slide d-flex justify-content-center">
+            <img src="Images/Twin Suction and Delivery Manifold.svg" alt="Twin Suction and Delivery Manifold" class="img-fluid" style="max-width:420px;">
+          </div>
+          <div class="swiper-slide d-flex justify-content-center">
+            <img src="Images/Twin Suction Manifold-c.svg" alt="Twin Suction Manifold" class="img-fluid" style="max-width:420px;">
+          </div>
+          
+        </div>
+        <!-- Pagination dots (remove if you don't want them) -->
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
     <!-- Sign Up Now -->
     <section class="mt-5 animate-item">
   <h1 class="text-center">Sign Up Now</h1>
@@ -959,6 +1009,33 @@
     <script src="js/Progressbar.js"></script>
     <script src="js/Header.js"></script>
     <script src="js/sign-up.js"></script>
+    <script src="https://unpkg.com/swiper@10/swiper-bundle.min.js"></script>
+
+<!-- Recommendation Script -->
+<script>
+  new Swiper('#ri-swiper', {
+    loop: true,
+    slidesPerView: 1,           // mobile default
+    slidesPerGroup: 1,          // one-in, one-out
+    spaceBetween: 12,
+    speed: 600,                 // smooth transition
+    autoplay: {
+      delay: 1200,              // ~1.2s between slides; set 1000 for exactly 1s
+      disableOnInteraction: false,
+      pauseOnMouseEnter: true
+    },
+    grabCursor: true,
+    pagination: { el: '.swiper-pagination', clickable: true },
+    breakpoints: {
+      768: {                    // tablet
+        slidesPerView: 2,
+        slidesPerGroup: 1,
+        spaceBetween: 16,
+        speed: 650
+      }
+    }
+  });
+</script>
 
     <!-- UP-ARROW JavaScript -->
     <script>

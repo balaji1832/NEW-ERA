@@ -1408,3 +1408,32 @@ footer{
 }
 
 
+  .ri-grid{
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 1px;               /* desktop gap */
+    align-items: center;
+    justify-items: center;
+  }
+  .ri-img{ max-width: 240px; } /* tweak if you want bigger/smaller */
+ @media (min-width:1000px) and (max-width:1439px){
+  .ri-img{ max-width: 155px; }
+
+ }
+  /* Remove bg & border in swiper slides */
+#ri-swiper .swiper-slide {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Remove background/padding from Swiper wrapper if any */
+#ri-swiper,
+#ri-swiper .swiper-wrapper {
+  background: transparent !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+#ri-swiper img {
+  background: transparent !important;
+}
