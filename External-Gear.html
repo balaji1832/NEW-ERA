@@ -297,13 +297,16 @@
     <!-- Tab-Pane Content -->
     <section class="product-section my-5 animate-item">
       <div class="container">
-         <div class="col-md-6 text-start d-block d-md-none">
-            <img
-              src="Images/External-Gear-Pump-NEE-1.png"
-              alt="External Gear Pump"
-              class="img-fluid pumps-product"
-            />
-          </div>
+        <div class="col-md-6 text-start">
+  <div class="fade-slider pumps-slider  d-md-none">
+    <img src="Images/ecternal-1.jpg" class="active img-fluid" alt="Pump 1">
+    <img src="Images/external-2.jpg" class="img-fluid" alt="Pump 2">
+    <img src="Images/external-3.jpg" class="img-fluid" alt="Pump 3">
+    <img src="Images/external-4.jpg" class="img-fluid" alt="Pump 4">
+    <img src="Images/external-5.jpg" class="img-fluid" alt="Pump 5">
+    <div class="indicators "></div>
+  </div>
+</div>
         <!-- Centered Tabs -->
         <ul
           class="nav nav-tabs justify-content-center mb-4"
@@ -373,12 +376,18 @@
         <div class="row align-items-start mt-5">
           <!-- left: Image -->
           <div class="col-md-6 text-start">
-            <img
-              src="Images/External-Gear-Pump-NEE-1.png"
-              alt="External Gear Pump"
-              class="img-fluid pumps-product d-none d-md-block"
-            />
-          </div>
+  <div class="fade-slider pumps-slider d-none d-md-flex">
+    <img src="Images/ecternal-1.jpg" class="active img-fluid" alt="Pump 1">
+    <img src="Images/external-2.jpg" class="img-fluid" alt="Pump 2">
+    <img src="Images/external-3.jpg" class="img-fluid" alt="Pump 3">
+    <img src="Images/external-4.jpg" class="img-fluid" alt="Pump 4">
+    <img src="Images/external-5.jpg" class="img-fluid" alt="Pump 5">
+    <div class="indicators "></div>
+  </div>
+</div>
+
+
+
           <!-- right: Tab Content -->
           <div class="col-md-6 mb-4 mb-lg-0">
             <div class="tab-content p-4 text-start">
@@ -863,5 +872,69 @@
         alert("Submitted!");
       });
     </script>
+    
+  <!-- Slider image Script -->
+    <script>
+document.addEventListener('DOMContentLoaded', function () {
+  const INTERVAL = 3000;
+
+  document.querySelectorAll('.fade-slider').forEach(slider => {
+    const imgs = Array.from(slider.querySelectorAll('img'));
+    const indicatorContainer = slider.querySelector('.indicators');
+
+    if (!imgs.length || !indicatorContainer) return;
+
+    let index = 0;
+    let timerId = null;
+
+    // build dots
+    indicatorContainer.innerHTML = '';
+    imgs.forEach((_, i) => {
+      const dot = document.createElement('span');
+      dot.setAttribute('data-i', i);
+      indicatorContainer.appendChild(dot);
+    });
+    const dots = Array.from(indicatorContainer.querySelectorAll('span'));
+
+    function showSlide(i) {
+      imgs.forEach(img => img.classList.remove('active'));
+      dots.forEach(dot => dot.classList.remove('active-dot'));
+      imgs[i].classList.add('active');
+      dots[i].classList.add('active-dot');
+    }
+
+    function nextSlide() {
+      index = (index + 1) % imgs.length;
+      showSlide(index);
+    }
+
+    function startTimer() {
+      stopTimer();
+      timerId = setInterval(nextSlide, INTERVAL);
+    }
+    function stopTimer() {
+      if (timerId) clearInterval(timerId);
+      timerId = null;
+    }
+
+    // dot click
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => {
+        index = i;
+        showSlide(index);
+        startTimer(); // prevent double-advance
+      });
+    });
+
+    // init
+    showSlide(0);
+    startTimer();
+  });
+});
+</script>
+
+
+
+
   </body>
 </html>
