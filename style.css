@@ -1105,7 +1105,7 @@ footer{
 .download-brochure .btn {
   font-weight: 500;
   font-size: 14px;
-  border-radius: 15px;
+  border-radius: 10px;
   padding: 8px 20px;
   transition: all 0.3s ease;
   background-color: #CA661B;
