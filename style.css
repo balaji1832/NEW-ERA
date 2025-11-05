@@ -1508,3 +1508,32 @@ footer{
 }
 .indicators .active-dot { background: #CA661B;width: 10px;height: 10px; }
 
+/* Form Popup */
+#form-popup {
+  position: fixed;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #222;
+  color: #fff;
+  padding: 14px 20px;
+  border-radius: 8px;
+  font-size: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  opacity: 0;
+  transition: all .35s ease;
+  z-index: 999999;
+}
+
+#form-popup.show {
+  bottom: 20px;
+  opacity: 1;
+}
+
+#form-popup.success {
+  background: #16a34a; /* green */
+}
+
+#form-popup.error {
+  background: #dc2626; /* red */
+}
