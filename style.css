@@ -1537,3 +1537,9 @@ footer{
 #form-popup.error {
   background: #dc2626; /* red */
 }
+
+
+.cookies:hover{
+  color: #CA661B !important;
+
+}
