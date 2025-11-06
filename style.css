@@ -961,6 +961,36 @@ footer{
 .sitemap-ul {
   line-height: 40px;
 }
+/* ====== FOOTER LINK HOVER EFFECT ====== */
+.sitemap-ul li a {
+  position: relative;
+  color: #fff; /* overrides Bootstrap text-light */
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover: color change + slide right */
+.sitemap-ul li a:hover {
+  color: #ffe7d0;             /* light orange tint */
+  transform: translateX(5px); /* smooth slide effect */
+}
+
+/* Optional: underline animation on hover */
+.sitemap-ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 2px;
+  background-color: #ffe7d0;
+  transition: width 0.3s ease;
+}
+
+.sitemap-ul li a:hover::after {
+  width: 100%;
+}
+
 .Copyright{
   border-top: 2px solid #fff;
   padding-top: 20px ;
@@ -1543,3 +1573,5 @@ footer{
   color: #CA661B !important;
 
 }
+
+
