@@ -49,7 +49,8 @@
 
  /* ===== HEADER STYLING ===== */
 /* .navbar { box-shadow:0 1px 5px rgba(0,0,0,.08); padding:.75rem 1rem; } */
-.navbar-brand img { height:48px; }
+.navbar-brand img { height:50px; }
+
 .navbar-nav .nav-link {
   color:#000;
   font-weight:600;
@@ -659,8 +660,8 @@ p{
   top: 50%;
   transform: translateY(-50%);
   z-index: 10;
-  background: rgba(0, 0, 0, 0.5) !important;
-  color: #fff !important;
+  background: rgba(249, 245, 245,0.5) !important;
+  color: #070707 !important;
   border: none;
   width: 40px;
   height: 40px;
@@ -676,8 +677,9 @@ p{
 .carousel-next-btn { right: 0.5rem; }
 
 .carousel-prev-btn:hover, .carousel-next-btn:hover { 
-  background: rgba(0,0,0,0.8); 
+ background: rgba(249, 245, 245,0.9) !important; 
 }
+
 
 .serving-button{
   bottom: 10px;
@@ -691,20 +693,16 @@ p{
 @media (min-width:1440px){
   .Serving-card:hover{
   transform: translateY(-10px);
-  box-shadow: -10px 10px 10px rgba(34, 34, 34,0.3);
+  box-shadow: -10px 10px 10px rgba(34, 34, 34,0.2);
 }
-.carousel-prev-btn, .carousel-next-btn{
-  display: none !important;
-}
+
 }
 
 @media (min-width:1025px) {
-  .carousel-prev-btn, .carousel-next-btn{
-  display: none !important;
-}
+
 .Serving-card:hover{
   transform: translateY(-10px);
-  box-shadow: -10px 10px 10px rgba(34, 34, 34,0.5);
+  box-shadow: -10px 10px 10px rgba(34, 34, 34,0.2);
 }
 }
 
