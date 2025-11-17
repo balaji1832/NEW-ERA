@@ -622,10 +622,16 @@ p{
 }
 /* Serving Diverse Industrial Needs */
 
+/* Outer wrapper to position arrows */
+.carousel-wrap {
+  position: relative;
+  width: 100%;
+}
+
 /* Carousel container */
 .carousel-container { 
   position: relative; 
-  overflow: hidden; 
+  overflow: hidden;   /* keeps extra cards hidden */
 }
 
 /* Track */
@@ -654,33 +660,44 @@ p{
   }
 }
 
-/* Carousel buttons */
-.carousel-prev-btn, .carousel-next-btn {
+/* Carousel buttons – positioned on wrapper, so not clipped */
+.carousel-prev-btn,
+.carousel-next-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   z-index: 10;
-  background: rgba(249, 245, 245,0.5) !important;
-  color: #070707 !important;
+  background: rgba(27, 27, 27, 0.5) !important;
+  color: #f4f3f3 !important;
   border: none;
   width: 40px;
   height: 40px;
   font-size: 27px;
-  cursor: pointer;
+  cursor: pointer;  
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50% !important;
 }
 
-.carousel-prev-btn { left: 0.5rem; }
-.carousel-next-btn { right: 0.5rem; }
+/* Outside the card row */
+.carousel-prev-btn { left: 0.7rem; }
+.carousel-next-btn { right: 0.7rem; }
 
-.carousel-prev-btn:hover, .carousel-next-btn:hover { 
- background: rgba(249, 245, 245,0.9) !important; 
+@media (min-width:760px){
+  .carousel-prev-btn { left: -2.1rem; }
+.carousel-next-btn { right: -2.2rem; }
+}
+@media (min-width:1020px){
+  .carousel-prev-btn { left: -2.7rem; }
+.carousel-next-btn { right: -2.7rem; }
+}
+.carousel-prev-btn:hover,
+.carousel-next-btn:hover { 
+  background: rgba(23, 23, 23, 0.8) !important; 
 }
 
-
+/* Button inside card */
 .serving-button{
   bottom: 10px;
   position: absolute;
@@ -692,18 +709,22 @@ p{
 
 @media (min-width:1440px){
   .Serving-card:hover{
-  transform: translateY(-10px);
-  box-shadow: -10px 10px 10px rgba(34, 34, 34,0.2);
-}
-
+    transform: translateY(-10px);
+    box-shadow: -10px 10px 10px rgba(34, 34, 34,0.2);
+  }
 }
 
 @media (min-width:1025px) {
-
-.Serving-card:hover{
-  transform: translateY(-10px);
-  box-shadow: -10px 10px 10px rgba(34, 34, 34,0.2);
+  .Serving-card:hover{
+    transform: translateY(-10px);
+    box-shadow: -10px 10px 10px rgba(34, 34, 34,0.2);
+  }
 }
+
+/* Optional: keep arrows closer on very small screens */
+@media (max-width: 767px) {
+  .carousel-prev-btn { left: -0.5rem; }
+  .carousel-next-btn { right: -0.5rem; }
 }
 
 
