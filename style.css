@@ -973,9 +973,10 @@ p{
 }
 
 footer{
-  background-color: #CA661B;
-  color: #fff;
+  background-color:  #efefef;
+  color: #CA661B;
   padding: 20px 0px;
+  
 }
 .sitemap-ul {
   line-height: 40px;
@@ -1002,7 +1003,7 @@ footer{
   bottom: -3px;
   width: 0%;
   height: 2px;
-  background-color: #ffe7d0;
+  background-color: #CA661B;
   transition: width 0.3s ease;
 }
 
@@ -1011,8 +1012,9 @@ footer{
 }
 
 .Copyright{
-  border-top: 2px solid #fff;
+  border-top: 2px solid #CA661B;
   padding-top: 20px ;
+  
 }
 
 
@@ -1027,8 +1029,15 @@ footer{
   opacity: 1;
   transform: translateY(0);
 }
-
-
+.footer-heading{
+  font-weight: 600;
+}
+.footer-text{
+  color: #000 !important;
+}
+.privacy-policy:hover{
+  color: #CA661B !important;
+}
 
 /* About us  */
 .About-Motion-Solutions {
