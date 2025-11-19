@@ -273,7 +273,7 @@ p{
 
 /* Icon tile */
 .lf-icon { display:inline-flex; align-items:center; justify-content:center; width:56px; height:56px; border-radius:14px; }
-.lf-icon img { max-width:40px; max-height:40px; object-fit:contain; }
+.lf-icon img { max-width:55px; max-height:55px; object-fit:contain; }
 
 /* Button (override Bootstrap) */
 .lf-btn.btn, .btn.lf-btn {
