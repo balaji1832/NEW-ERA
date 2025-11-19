@@ -707,12 +707,33 @@
             <form
               class="neeq-form"
               id="contactForm"
-              action="Enquiry.php"
+              action="contact-enquiry.php"
               method="post"
               novalidate
             >
+
+            <!-- Company (required) -->
+              <div class="mb-4">
+                <label for="neeq-company" class="form-label"
+                  >Company Name</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="neeq-company"
+                  name="company"
+                  placeholder="Enter your Company Name"
+                  required
+                  minlength="2"
+                  maxlength="80"
+                  pattern="^[A-Za-z0-9&().,'\-\s]{2,80}$"
+                />
+                <small class="invalid-msg"></small>
+              </div>
+
+              <!-- Name (required) -->
               <div class="mb-3">
-                <label for="neeq-name" class="form-label">Name</label>
+                <label for="neeq-name" class="form-label">Contact Person Name</label>
                 <input
                   type="text"
                   class="form-control"
@@ -722,26 +743,11 @@
                   required
                   minlength="2"
                   maxlength="60"
-                  pattern="^[A-Za-z.'\\-\\s]{2,60}$"
+                  pattern="^[A-Za-z.'\-\s]{2,60}$"
                 />
                 <small class="invalid-msg"></small>
               </div>
-
-              <div class="mb-3">
-                <label for="neeq-phone" class="form-label">Phone Number</label>
-                <input
-                  type="tel"
-                  class="form-control"
-                  id="neeq-phone"
-                  name="phone"
-                  placeholder="+91 9876543210"
-                  inputmode="tel"
-                  maxlength="20"
-                  pattern="^(\\+?\\d{1,3}[-\\s]?)?\\d{10,15}$"
-                />
-                <small class="invalid-msg"></small>
-              </div>
-
+              <!-- Email (required) -->
               <div class="mb-3">
                 <label for="neeq-email" class="form-label">E-Mail</label>
                 <input
@@ -756,6 +762,26 @@
                 <small class="invalid-msg"></small>
               </div>
 
+              <!-- Phone (required) -->
+              <div class="mb-3">
+                <label for="neeq-phone" class="form-label">Phone Number</label>
+                <input
+                  type="tel"
+                  class="form-control"
+                  id="neeq-phone"
+                  name="phone"
+                  placeholder="+91 9876543210"
+                  inputmode="tel"
+                  maxlength="20"
+                  required
+                  pattern="^(\+?\d{1,3}[-\s]?)?\d{10,15}$"
+                />
+                <small class="invalid-msg"></small>
+              </div>
+
+              
+
+              <!-- WhatsApp (required) -->
               <div class="mb-3">
                 <label for="neeq-whatsapp" class="form-label"
                   >What’s App Number</label
@@ -768,31 +794,87 @@
                   placeholder="+91 9876543210"
                   inputmode="tel"
                   maxlength="20"
-                  pattern="^(\\+?\\d{1,3}[-\\s]?)?\\d{10,15}$"
+                  required
+                  pattern="^(\+?\d{1,3}[-\s]?)?\d{10,15}$"
                 />
                 <small class="invalid-msg"></small>
               </div>
 
-              <div class="mb-4">
-                <label for="neeq-company" class="form-label"
-                  >Company Name</label
+              
+
+              <!-- 🔥 New 2-Column Fields Start -->
+              <div class="row">
+                <div class="col-12 col-md-6 mb-3">
+                  <label class="form-label">Liquid to be Pumped Name</label>
+                  <input type="text" class="form-control" name="liquid_name" />
+                </div>
+
+                <div class="col-12 col-md-6 mb-3">
+                  <label class="form-label">Liquid Flow Rate</label>
+                  <input type="text" class="form-control" name="flow_rate" />
+                </div>
+
+                <div class="col-12 col-md-6 mb-3">
+                  <label class="form-label"
+                    >Liquid Discharge Head or Pressure</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="discharge_head"
+                  />
+                </div>
+
+                <div class="col-12 col-md-6 mb-3">
+                  <label class="form-label">Liquid Suction Condition</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="suction_condition"
+                  />
+                </div>
+
+                <div class="col-12 col-md-6 mb-3">
+                  <label class="form-label">Liquid Viscosity</label>
+                  <input type="text" class="form-control" name="viscosity" />
+                </div>
+
+                <div class="col-12 col-md-6 mb-3">
+                  <label class="form-label">Liquid Specific Gravity</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="specific_gravity"
+                  />
+                </div>
+
+                <div class="col-12 col-md-6 mb-3">
+                  <label class="form-label">Liquid Temperature</label>
+                  <input type="text" class="form-control" name="temperature" />
+                </div>
+
+                <div class="col-12 col-md-6 mb-4">
+                  <label class="form-label">Liquid PH Value of the fluid</label>
+                  <input type="text" class="form-control" name="ph_value" />
+                </div>
+
+                <!-- How did you know (required) -->
+                <select
+                  class="form-select"
+                  name="source"
+                  id="neeq-source"
+                  required
                 >
-                <input
-                  type="text"
-                  class="form-control"
-                  id="neeq-company"
-                  name="company"
-                  placeholder="Enter your Company Name"
-                  minlength="2"
-                  maxlength="80"
-                  pattern="^[A-Za-z0-9&().,'\\-\\s]{2,80}$"
-                />
-                <small class="invalid-msg"></small>
+                  <option value="" selected disabled>Select an option</option>
+                  <option value="Website">Website</option>
+                  <option value="Ads">Ads</option>
+                  <option value="Social Media">Social Media</option>
+                  <option value="Referral">Referral</option>
+                </select>
               </div>
+              <!-- 🔥 New 2-Column Fields End -->
 
-              <button type="submit" class="btn  neeq-btn">
-                Submit
-              </button>
+              <button type="submit" class="btn neeq-btn mt-3">Submit</button>
             </form>
           </div>
         </div>
