@@ -895,30 +895,60 @@
     <section class="mt-5 animate-item">
       <h1 class="text-center">Sign Up Now</h1>
       <p class="text-center">
-        To get regular updates about<br />latest offers and product launches!
+        To get regular updates about <br />
+        latest offers and product launches!
       </p>
 
       <div class="container" style="font-family: 'Lato'">
-        <center>
-          <div class="d-flex text-align-center justify-content-between sign-up">
-            <input
-              type="email"
-              id="emailInput"
-              placeholder="Enter Your Email"
-              style="padding: 8px; border: none; border-radius: 5px; width: 55%"
-            />
-            <button class="signup-btn text-dark" onclick="validateForm()">
-              Submit
-            </button>
-          </div>
+        <form
+          id="signupForm"
+          action="signup.php"
+          method="POST"
+          onsubmit="validateForm(event)"
+        >
+          <center>
+            <div
+              class="d-flex justify-content-between sign-up"
+              style="max-width: 600px; width: 100%"
+            >
+              <input
+                type="email"
+                name="email"
+                id="emailInput"
+                placeholder="Enter Your Email"
+                class="form-control"
+                style="
+                  padding: 8px;
+                  border: none;
+                  border-radius: 5px;
+                  width: 55%;
+                  outline: none;
+                "
+                required
+              />
 
-          <div
-            class="gdpr-check justify-content-md-center justify-content-start"
-          >
-            <input type="checkbox" id="gdpr" />
-            <label for="gdpr">Accept GDPR Terms</label>
-          </div>
-        </center>
+              <button
+                type="submit"
+                class="signup-btn text-dark"
+                style="padding: 8px 20px; border-radius: 5px"
+              >
+                Submit
+              </button>
+            </div>
+
+            <div class="gdpr-check mt-2">
+              <input type="checkbox" id="gdpr" required />
+              <label for="gdpr" style="margin-left: 5px"
+                >Accept GDPR Terms</label
+              >
+            </div>
+          </center>
+        </form>
+        <div id="toastBox"></div>
+        <p
+          id="responseMessage"
+          style="text-align: center; margin-top: 10px; font-weight: 600"
+        ></p>
       </div>
     </section>
 
