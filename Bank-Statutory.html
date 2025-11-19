@@ -28,6 +28,56 @@
     />
   </head>
   <body>
+    <div id="toastBox"></div>
+
+    <style>
+      #toastBox {
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 99999;
+      }
+
+      .toast {
+        min-width: 260px;
+        padding: 12px 18px;
+        margin-top: 10px;
+        background: #333;
+        color: #fff;
+        border-radius: 6px;
+        text-align: center;
+        font-size: 14px;
+        opacity: 0;
+        animation: fadeInOut 3s ease;
+      }
+
+      .toast.success {
+        background: #16a34a;
+      }
+      .toast.error {
+        background: #dc2626;
+      }
+
+      @keyframes fadeInOut {
+        0% {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        10% {
+          opacity: 1;
+          transform: translateY(0px);
+        }
+        90% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+      }
+    </style>
+
     <!-- Scroll Progress Bar -->
     <div id="scroll-progress"></div>
     <!-- HTML: Sticky Scroll-to-Top Icon -->
@@ -36,7 +86,7 @@
       <!-- Up arrow icon -->
     </div>
     <!-- Header -->
-     <header class="ne-header sticky-top">
+    <header class="ne-header sticky-top">
       <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light">
           <div class="container-fluid">
@@ -68,7 +118,7 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
               <ul class="navbar-nav ms-auto align-items-lg-center">
                 <li class="nav-item">
-                  <a class="nav-link " href="index.html">Home</a>
+                  <a class="nav-link" href="index.html">Home</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="Aboutus.html">About Us</a>
@@ -77,7 +127,7 @@
                 <!-- SOLUTIONS -->
                 <li class="nav-item dropdown">
                   <a
-                    class="nav-link  dropdown-toggle d-flex align-items-center gap-1"
+                    class="nav-link dropdown-toggle d-flex align-items-center gap-1"
                     data-bs-toggle="dropdown"
                   >
                     Solutions <i class="bi bi-chevron-down small"></i>
@@ -135,7 +185,7 @@
                 <!-- PRODUCTS -->
                 <li class="nav-item dropdown position-static">
                   <a
-                    class="nav-link  dropdown-toggle d-flex align-items-center gap-1"
+                    class="nav-link dropdown-toggle d-flex align-items-center gap-1"
                     data-bs-toggle="dropdown"
                   >
                     Products <i class="bi bi-chevron-down small"></i>
@@ -157,8 +207,7 @@
                           TEFLON & SS316 (CF8M)</a
                         >
                         <a href="Chemical-SS304.html" class="fw-semibold"
-                          >Chemical SS316 (CF8M) Magnetic Drive
-                          Pumps</a
+                          >Chemical SS316 (CF8M) Magnetic Drive Pumps</a
                         >
                         <a
                           href="Chemical-pp-horizontal.html"
@@ -169,8 +218,7 @@
                           >Chemical PP and UHMWPE Vertical Glandless Pumps</a
                         >
                         <a href="Chemical-CI.html" class="fw-semibold"
-                          >Chemical CI, WCB (CS) &  SS316 (CF8M)
-                          Process Pumps</a
+                          >Chemical CI, WCB (CS) & SS316 (CF8M) Process Pumps</a
                         >
                       </div>
 
@@ -184,17 +232,16 @@
                           (CF8M)</a
                         >
                         <a href="External-Gear.html" class="fw-semibold"
-                          >External Gear Pumps CI, WCB (CS) & 
-                          SS316 (CF8M)</a
+                          >External Gear Pumps CI, WCB (CS) & SS316 (CF8M)</a
                         >
                         <a href="FDA-Centrifugal.html" class="fw-semibold"
-                          >FDA – Centrifugal Sanitary Pumps in 
-                          SS316 (CF8M)</a
+                          >FDA – Centrifugal Sanitary Pumps in SS316 (CF8M)</a
                         >
                         <a
                           href="Horizontal-Vertical-Multistage.html"
                           class="fw-semibold"
-                          >Horizontal & Vertical Multistage Pumps in CI & SS316 (CF8M)</a
+                          >Horizontal & Vertical Multistage Pumps in CI & SS316
+                          (CF8M)</a
                         >
                         <a href="Hose-Peristaltic.html" class="fw-semibold"
                           >Hose/Peristaltic Pumps in RUBBER OR PTFE</a
@@ -203,18 +250,19 @@
 
                       <div class="col-lg-4 col-md-6">
                         <a href="Internal-Gear-Pump.html" class="fw-semibold"
-                          >Internal Gear Pump in CI & SS316
-                          (CF8M)</a
+                          >Internal Gear Pump in CI & SS316 (CF8M)</a
                         >
                         <a
                           href="Non-Clog-Horizontal-Self-Priming-Pumps.html"
                           class="fw-semibold"
-                          >Non-Clog Horizontal Self Priming Pumps in CI & SS316 (CF8M) and Alloys</a
+                          >Non-Clog Horizontal Self Priming Pumps in CI & SS316
+                          (CF8M) and Alloys</a
                         >
                         <a
                           href="Non-Clog-Vertical-Submersible-Pumps.html"
                           class="fw-semibold"
-                          >Non-Clog Vertical Submersible Pumps in CI & SS316 (CF8M)</a
+                          >Non-Clog Vertical Submersible Pumps in CI & SS316
+                          (CF8M)</a
                         >
                         <a
                           href="PP-PVDF-Magnetic-Drive-Pumps.html"
@@ -222,8 +270,7 @@
                           >PP & PVDF Magnetic Drive Pumps</a
                         >
                         <a href="Rotary-Lobe-Pumps.html" class="fw-semibold"
-                          >Rotary Lobe Pumps in CI & SS316
-                          (CF8M)</a
+                          >Rotary Lobe Pumps in CI & SS316 (CF8M)</a
                         >
                         <a href="Screw-Pumps.html" class="fw-semibold"
                           >Screw Pumps in CI & SS316 (CF8M)</a
@@ -236,7 +283,7 @@
                 <!-- INDUSTRIES -->
                 <li class="nav-item dropdown position-static">
                   <a
-                    class="nav-link  dropdown-toggle d-flex align-items-center gap-1"
+                    class="nav-link dropdown-toggle d-flex align-items-center gap-1"
                     data-bs-toggle="dropdown"
                   >
                     Industries <i class="bi bi-chevron-down small"></i>
@@ -421,130 +468,154 @@
 
     <!-- Bank-Details -->
     <section class="section py-5 py-lg-6">
-  <div class="container">
-    <div class="row g-4">
-      <!-- BANK DETAILS -->
-      <div class="col-12 col-lg-6">
-        <div class="card shadow-sm h-100">
-          <div class="card-body p-4">
-            <h2 class="fw-semibold mb-3">BANK DETAILS</h2>
+      <div class="container">
+        <div class="row g-4">
+          <!-- BANK DETAILS -->
+          <div class="col-12 col-lg-6">
+            <div class="card shadow-sm h-100">
+              <div class="card-body p-4">
+                <h2 class="fw-semibold mb-3">BANK DETAILS</h2>
 
-            <div class="kv-table">
-              <div class="kv-row">
-                <div class="k">ACCOUNT HOLDER NAME</div>
-                <div class="v">New Era Engineers &amp; Traders</div>
-              </div>
-              <div class="kv-row">
-                <div class="k">HDFC ACCOUNT NUMBER</div>
-                <div class="v">Current A/C No. 01412000003964</div>
-              </div>
-              <div class="kv-row">
-                <div class="k">BANK NAME</div>
-                <div class="v">HDFC Bank Ltd</div>
-              </div>
-              <div class="kv-row">
-                <div class="k">HDFC BANK ADDRESS</div>
-                <div class="v">No 10, 3rd Cross Street, R.A. Puram, Chennai – 600028, Tamil Nadu, India.</div>
-              </div>
-              <div class="kv-row">
-                <div class="k">HDFC IFSC CODE</div>
-                <div class="v">HDFC0000141</div>
-              </div>
-              <div class="kv-row">
-                <div class="k">HDFC BANK MICR CODE</div>
-                <div class="v">600240012</div>
-              </div>
-              <div class="kv-row">
-                <div class="k">HDFC BANK BRANCH CODE</div>
-                <div class="v">141</div>
+                <div class="kv-table">
+                  <div class="kv-row">
+                    <div class="k">ACCOUNT HOLDER NAME</div>
+                    <div class="v">New Era Engineers &amp; Traders</div>
+                  </div>
+                  <div class="kv-row">
+                    <div class="k">HDFC ACCOUNT NUMBER</div>
+                    <div class="v">Current A/C No. 01412000003964</div>
+                  </div>
+                  <div class="kv-row">
+                    <div class="k">BANK NAME</div>
+                    <div class="v">HDFC Bank Ltd</div>
+                  </div>
+                  <div class="kv-row">
+                    <div class="k">HDFC BANK ADDRESS</div>
+                    <div class="v">
+                      No 10, 3rd Cross Street, R.A. Puram, Chennai – 600028,
+                      Tamil Nadu, India.
+                    </div>
+                  </div>
+                  <div class="kv-row">
+                    <div class="k">HDFC IFSC CODE</div>
+                    <div class="v">HDFC0000141</div>
+                  </div>
+                  <div class="kv-row">
+                    <div class="k">HDFC BANK MICR CODE</div>
+                    <div class="v">600240012</div>
+                  </div>
+                  <div class="kv-row">
+                    <div class="k">HDFC BANK BRANCH CODE</div>
+                    <div class="v">141</div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
 
-      <!-- STATUTORY INFORMATION -->
-      <div class="col-12 col-lg-6">
-        <div class="card shadow-sm h-100">
-          <div class="card-body p-4">
-            <h2 class="fw-semibold mb-3">STATUTORY INFORMATION</h2>
+          <!-- STATUTORY INFORMATION -->
+          <div class="col-12 col-lg-6">
+            <div class="card shadow-sm h-100">
+              <div class="card-body p-4">
+                <h2 class="fw-semibold mb-3">STATUTORY INFORMATION</h2>
 
-            <div class="kv-table">
-              <div class="kv-row">
-                <div class="k">ARN NO</div>
-                <div class="v">AD3308180007056</div>
-              </div>
-              <div class="kv-row">
-                <div class="k">GSTIN</div>
-                <div class="v">33AAEFN7790G1Z3</div>
-              </div>
-              <div class="kv-row">
-                <div class="k">PAN</div>
-                <div class="v">AAEFN7790G</div>
-              </div>
-              <div class="kv-row">
-                <div class="k">TAN NO</div>
-                <div class="v">CHEN05358D</div>
-              </div>
-              <div class="kv-row">
-                <div class="k">UDYAM REGISTRATION NO</div>
-                <div class="v">UDYAM-TN-02-0060208</div>
-              </div>
-              <!-- <div class="kv-row">
+                <div class="kv-table">
+                  <div class="kv-row">
+                    <div class="k">ARN NO</div>
+                    <div class="v">AD3308180007056</div>
+                  </div>
+                  <div class="kv-row">
+                    <div class="k">GSTIN</div>
+                    <div class="v">33AAEFN7790G1Z3</div>
+                  </div>
+                  <div class="kv-row">
+                    <div class="k">PAN</div>
+                    <div class="v">AAEFN7790G</div>
+                  </div>
+                  <div class="kv-row">
+                    <div class="k">TAN NO</div>
+                    <div class="v">CHEN05358D</div>
+                  </div>
+                  <div class="kv-row">
+                    <div class="k">UDYAM REGISTRATION NO</div>
+                    <div class="v">UDYAM-TN-02-0060208</div>
+                  </div>
+                  <!-- <div class="kv-row">
                 <div class="k">HDFC BANK MICR CODE</div>
                 <div class="v">600240012</div>
               </div> -->
-              <div class="kv-row">
-                <div class="k">IEC CODE</div>
-                <div class="v">0404007092</div>
+                  <div class="kv-row">
+                    <div class="k">IEC CODE</div>
+                    <div class="v">0404007092</div>
+                  </div>
+                </div>
               </div>
             </div>
-
           </div>
         </div>
       </div>
-
-    </div>
-  </div>
-</section>
-
-
-   
+    </section>
 
     <!-- Sign Up Now -->
     <section class="mt-5 animate-item">
-  <h1 class="text-center">Sign Up Now</h1>
-  <p class="text-center">
-    To get regular updates about <br> latest offers and product launches!
-  </p>
+      <h1 class="text-center">Sign Up Now</h1>
+      <p class="text-center">
+        To get regular updates about <br />
+        latest offers and product launches!
+      </p>
 
-  <div class="container" style="font-family: 'Lato'">
-    <form action="signup.php" method="POST" onsubmit="return validateForm()">
-      <center>
-        <div class="d-flex justify-content-between sign-up" style="max-width:600px">
-          
-          <input
-            type="email"
-            name="email"
-            id="emailInput"
-            placeholder="Enter Your Email"
-            style="padding: 8px; border: none; border-radius: 5px; width: 55%"
-            required
-          />
+      <div class="container" style="font-family: 'Lato'">
+        <form
+          id="signupForm"
+          action="signup.php"
+          method="POST"
+          onsubmit="validateForm(event)"
+        >
+          <center>
+            <div
+              class="d-flex justify-content-between sign-up"
+              style="max-width: 600px; width: 100%"
+            >
+              <input
+                type="email"
+                name="email"
+                id="emailInput"
+                placeholder="Enter Your Email"
+                class="form-control"
+                style="
+                  padding: 8px;
+                  border: none;
+                  border-radius: 5px;
+                  width: 55%;
+                  outline: none;
+                "
+                required
+              />
 
-          <button type="submit" class="signup-btn text-dark">
-            Submit
-          </button>
-        </div>
+              <button
+                type="submit"
+                class="signup-btn text-dark"
+                style="padding: 8px 20px; border-radius: 5px"
+              >
+                Submit
+              </button>
+            </div>
 
-        <div class="gdpr-check justify-content-md-center justify-content-start mt-2">
-          <input type="checkbox" id="gdpr" required />
-          <label for="gdpr">Accept GDPR Terms</label>
-        </div>
-      </center>
-    </form>
-  </div>
-</section>
+            <div class="gdpr-check mt-2">
+              <input type="checkbox" id="gdpr" required />
+              <label for="gdpr" style="margin-left: 5px"
+                >Accept GDPR Terms</label
+              >
+            </div>
+          </center>
+        </form>
+        <div id="toastBox"></div>
+        <p
+          id="responseMessage"
+          style="text-align: center; margin-top: 10px; font-weight: 600"
+        ></p>
+      </div>
+    </section>
 
     <!-- Footer Section -->
     <footer class="">
@@ -563,7 +634,7 @@
             <h6 class="footer-heading">SiteMap</h6>
             <ul class="sitemap-ul">
               <li>
-                <a href="Aboutus.html" class="text-decoration-none footer-text "
+                <a href="Aboutus.html" class="text-decoration-none footer-text"
                   >About</a
                 >
               </li>
@@ -605,8 +676,7 @@
                   alt="Pin"
                 />
                 <p class="footer-text">
-                  No.96-A, TTK Road, Alwarpet, Chennai, Tamil Nadu
-                  600018,INDIA.
+                  No.96-A, TTK Road, Alwarpet, Chennai, Tamil Nadu 600018,INDIA.
                 </p>
               </div>
 
@@ -761,8 +831,5 @@
         alert("Submitted!");
       });
     </script>
-
-
-
   </body>
 </html>
