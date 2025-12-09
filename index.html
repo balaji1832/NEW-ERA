@@ -43,7 +43,7 @@
           <div class="container-fluid">
             <!-- Brand -->
             <a class="navbar-brand" href="index.html">
-              <img src="Images/logo.png" alt="New Era Engineers" />
+              <img src="Images/logo.svg" alt="New Era Engineers" />
             </a>
 
             <!-- Mobile: burger + search -->
@@ -533,9 +533,9 @@
                   <p>number of happy clients</p>
                 </div>
 
-                <div class="stat-card white">
+                <div class="stat-card white ">
                   <img
-                    src="Images/newera-logo.svg"
+                    src="Images/msme.svg"
                     width="270px"
                     class="img-fluid"
                   />
@@ -553,7 +553,7 @@
           <div class="col-12 col-lg-6">
             <p>
               Founded in 1956 by Mr.S.M.Desai, New Era Group has grown to be a
-              leading Pump solutions in Chennai,India today. An expert in
+              leading Pumping solutions in Chennai,India today. An expert in
               pumping technology, the company is one of the top few pump
               distributors in India that distributes reputable and leading
               brands and has reacted to high demand for trendsetting pumps and
@@ -1241,7 +1241,7 @@
           <div class="col-8 col-md-3 col-lg-3 logo-wrapper">
             <div class="logo-box">
               <img
-                src="Images/f-n.png"
+                src="Images/logo.svg"
                 class="img-fluid mb-4 text-start"
                 alt="Logo"
               />
@@ -1442,5 +1442,78 @@
         window.addEventListener("resize", adjustFooter);
       })();
     </script>
+
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const track = document.querySelector(".carousel-track");
+  const cards = Array.from(track.children);
+  const prevBtn = document.querySelector(".carousel-prev-btn");
+  const nextBtn = document.querySelector(".carousel-next-btn");
+  const container = document.querySelector(".carousel-container");
+
+  let index = 0;
+  let autoSlide;
+
+  function getCardWidth() {
+    const gap = parseFloat(getComputedStyle(track).gap) || 0;
+    return cards[0].offsetWidth + gap;
+  }
+
+  function getMaxTranslateX() {
+    const totalWidth = track.scrollWidth; // total width of all cards
+    const containerWidth = container.offsetWidth;
+    return totalWidth - containerWidth;
+  }
+
+  function moveCarousel() {
+    const cardWidth = getCardWidth();
+    let translateX = index * cardWidth;
+    const maxTranslateX = getMaxTranslateX();
+
+    if (translateX > maxTranslateX) {
+      // Jump back to first card
+      index = 0;
+      translateX = 0;
+    }
+    
+    track.style.transition = "transform 0.5s ease";
+    track.style.transform = `translateX(-${translateX}px)`;
+  }
+
+  function nextSlide() {
+    index++;
+    moveCarousel();
+  }
+
+  function prevSlide() {
+    index--;
+    if (index < 0) index = 0;
+    moveCarousel();
+  }
+
+  nextBtn.addEventListener("click", () => { nextSlide(); resetAutoSlide(); });
+  prevBtn.addEventListener("click", () => { prevSlide(); resetAutoSlide(); });
+
+  function startAutoSlide() {
+    autoSlide = setInterval(nextSlide, 2000);
+  }
+
+  function resetAutoSlide() {
+    clearInterval(autoSlide);
+    startAutoSlide();
+  }
+
+  container.addEventListener("mouseenter", () => clearInterval(autoSlide));
+  container.addEventListener("mouseleave", () => startAutoSlide());
+
+  window.addEventListener("resize", moveCarousel);
+
+  moveCarousel();
+  startAutoSlide();
+});
+</script>
+
+   
+
   </body>
 </html>
