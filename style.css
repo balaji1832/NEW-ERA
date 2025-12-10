@@ -1792,3 +1792,66 @@ footer{
 .fab-icon {
   -webkit-tap-highlight-color: transparent;
 }
+
+/* Highlight message styles */
+.highlight-message {
+  background-color: rgba(202, 102, 27, 0.95); /* slightly darker for readability */
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  padding: 12px 25px;
+  font-size: 1.2rem;
+  letter-spacing: 0.5px;
+  border-radius: 8px;
+  position: absolute; /* overlay on banner */
+  top: 10%; /* 10% from top of banner */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  opacity: 0; /* start hidden */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+/* Animation keyframes */
+@keyframes slideFade {
+  0% {
+    transform: translate(-50%, -50%);
+    opacity: 0;
+  }
+  10% {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+  90% {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%);
+    opacity: 0;
+  }
+}
+
+/* Animate class */
+.animate-banner {
+  animation: slideFade 4s ease-in-out forwards;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) { /* tablets */
+  .highlight-message {
+    font-size: 1rem;
+    padding: 10px 20px;
+    top: 8%;
+  }
+}
+
+@media (max-width: 576px) { /* mobile */
+  .highlight-message {
+    font-size: 0.9rem;
+    padding: 8px 15px;
+    top: 6%;
+  }
+}

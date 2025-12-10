@@ -402,27 +402,36 @@
     </header>
 
     <!-- Banner Section -->
-    <!-- Desktop Banner -->
-    <section class="banner-section d-none d-md-block animate-item">
-      <div class="container-fluid p-0">
-        <img
-          src="Images/13.Chemical PP and UHMWPE Vertical Glandless Pumps.jpg"
-          alt="Banner Image"
-          class="img-fluid banner-img w-100"
-        />
-      </div>
-    </section>
+  <!-- Desktop Banner -->
+<section class="banner-section d-none d-md-block animate-item position-relative">
+  <div class="container-fluid p-0">
+    <img
+      src="Images/13.Chemical PP and UHMWPE Vertical Glandless Pumps.jpg"
+      alt="Banner Image"
+      class="img-fluid banner-img w-100"
+    />
+    <!-- Animated message on top of banner -->
+    <div class="highlight-message animate-banner">
+      Now available in <strong>PVDF !!</strong>
+    </div>
+  </div>
+</section>
 
-    <!-- Mobile Banner -->
-    <section class="banner-section d-block d-md-none animate-item">
-      <div class="container p-0">
-        <img
-          src="Images/13.Chemical PP and UHMWPE Vertical Glandless Pumps-mob.jpg"
-          alt="Banner Image"
-          class="img-fluid banner-img w-100"
-        />
-      </div>
-    </section>
+<!-- Mobile Banner -->
+<section class="banner-section d-block d-md-none animate-item position-relative">
+  <div class="container p-0">
+    <img
+      src="Images/13.Chemical PP and UHMWPE Vertical Glandless Pumps-mob.jpg"
+      alt="Banner Image"
+      class="img-fluid banner-img w-100"
+    />
+    <!-- Animated message on top of banner -->
+    <div class="highlight-message animate-banner">
+      Now available in <strong>PVDF !!</strong>
+    </div>
+  </div>
+</section>
+
 
     <!--  PUMP DESCRIPTION -->
     <section class="mt-5 animate-item">
@@ -1202,5 +1211,20 @@
         alert("Submitted!");
       });
     </script>
+
+    <script>
+  function animateMessage() {
+    const messages = document.querySelectorAll('.highlight-message');
+    messages.forEach(msg => {
+      msg.classList.remove('animate-banner'); // reset
+      void msg.offsetWidth; // trigger reflow
+      msg.classList.add('animate-banner'); // restart animation
+    });
+  }
+
+  // Repeat every 6 seconds
+  setInterval(animateMessage, 6000);
+</script>
+
   </body>
 </html>
