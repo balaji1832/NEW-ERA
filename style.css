@@ -1700,3 +1700,95 @@ footer{
         }
       }
     
+
+      /* ===============================
+   Floating Action Button - FULL CSS
+   =============================== */
+
+.fab-container {
+  position: fixed;
+  bottom: 110px;
+  right: 20px;
+  z-index: 9999;
+}
+
+/* Toggle Button */
+.fab-toggle {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(226, 131, 23,0.9);
+  color: #fff;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Shake animation */
+.shake {
+  animation: shake 0.5s;
+}
+
+@keyframes shake {
+  0% { transform: rotate(0); }
+  20% { transform: rotate(4deg); }
+  40% { transform: rotate(-4deg); }
+  60% { transform: rotate(4deg); }
+  80% { transform: rotate(-4deg); }
+  100% { transform: rotate(0); }
+}
+
+/* Options container (VERTICAL) */
+.fab-options {
+  position: absolute;
+  bottom: 70px;
+  right: 5px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+  transition: all 0.4s ease;
+}
+
+/* Open state */
+.fab-container.active .fab-options {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Individual icons */
+.fab-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* Phone icon */
+.fab-icon.phone {
+  background: #ff7a00;
+}
+
+/* WhatsApp icon */
+.fab-icon.whatsapp {
+  background: #25d366;
+}
+
+/* Mobile touch polish */
+.fab-toggle,
+.fab-icon {
+  -webkit-tap-highlight-color: transparent;
+}
