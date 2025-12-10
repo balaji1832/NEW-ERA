@@ -122,6 +122,30 @@
   border-color:#d24a22;
   box-shadow:0 4px 14px rgba(210,74,34,.15);
 }
+/* Enqire now */
+.cta-enquire {
+  background-color: #CA661B;
+  color: #ffffff;
+  border: none;
+  padding: 6px 20px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  
+}
+
+.cta-enquire:hover {
+  background-color: #b85714;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(202, 102, 27, 0.45);
+}
+
+.cta-enquire:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 10px rgba(202, 102, 27, 0.3);
+}
 
 /* ===== SEARCH BOX (slide-down) ===== */
 .search-box{
