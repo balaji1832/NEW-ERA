@@ -565,7 +565,7 @@
     </section>
 
     <!-- Our Installation Success Stories -->
-    <section class="animate-item">
+    <section class="animate-item pt-3">
       <div class="container d-flex">
         <div class="row">
           <div class="col-12 col-lg-5">
@@ -581,8 +581,73 @@
         </div>
       </div>
 
+      <section class="py-3 mb-md-5 bg-white">
+  <div class="container">
+
+    <div class="fp-carousel-wrapper">
+      <div class="fp-carousel-track" id="fpCarouselTrack">
+
+        <div class="fp-carousel-card">
+          <div class="fp-card-head">
+            <span>01</span>
+            <p>Self-priming</p>
+          </div>
+          <img src="Images/T-1.png">
+        </div>
+
+        <div class="fp-carousel-card">
+          <div class="fp-card-head">
+            <span>02</span>
+            <p>Drum Transfer</p>
+          </div>
+          <img src="Images/T-2.png">
+        </div>
+
+        <div class="fp-carousel-card">
+          <div class="fp-card-head">
+            <span>03</span>
+            <p>Positive Suction Head</p>
+          </div>
+          <img src="Images/T-3.png">
+        </div>
+
+        <div class="fp-carousel-card">
+          <div class="fp-card-head">
+            <span>04</span>
+            <p>Immersed</p>
+          </div>
+          <img src="Images/T-4.png">
+        </div>
+
+        <div class="fp-carousel-card">
+          <div class="fp-card-head">
+            <span>05</span>
+            <p>Twin Suction and Delivery Manifold</p>
+          </div>
+          <img src="Images/T-5.png">
+        </div>
+
+        <div class="fp-carousel-card">
+          <div class="fp-card-head">
+            <span>06</span>
+            <p>Twin Suction Manifold</p>
+          </div>
+          <img src="Images/T-6.png">
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
       <!-- Desktop Timeline -->
-      <div class="container timeline-container d-none d-lg-block">
+      <!-- <div class="container timeline-container d-none d-lg-block">
         <div class="timeline">
           <div class="timeline-indicator"></div>
 
@@ -673,12 +738,12 @@
             <img src="Images/T-6.png" alt="Twin Suction Manifold" />
           </div>
         </div>
-      </div>
+      </div> -->
 
       <!-- Mobile/Tablet Carousel -->
-      <div
+      <!-- <div
         id="timelineCarousel"
-        class="carousel slide timeline-carousel d-flex d-lg-none"
+        class="carousel slide timeline-carousel d-flex container d-lg-none"
         data-bs-ride="carousel"
       >
         <div class="carousel-inner">
@@ -755,7 +820,7 @@
         >
           <span class="carousel-control-next-icon"></span>
         </button>
-      </div>
+      </div> -->
     </section>
 
     <!-- Serving Diverse Industrial Needs -->
@@ -1580,5 +1645,39 @@
         startAutoSlide();
       });
     </script>
+
+    <script>
+(function () {
+  const track = document.getElementById("fpCarouselTrack");
+  if (!track) return;
+
+  const cards = track.querySelectorAll(".fp-carousel-card");
+  const gap = 24;
+  let visible = 4;
+  let index = 0;
+
+  function getVisibleCount() {
+    if (window.innerWidth <= 576) return 1;
+    if (window.innerWidth <= 991) return 2;
+    return 4;
+  }
+
+  function slide() {
+    visible = getVisibleCount();
+    index++;
+
+    if (index > cards.length - visible) {
+      index = 0;
+    }
+
+    const cardWidth = cards[0].offsetWidth + gap;
+    track.style.transform = `translateX(-${index * cardWidth}px)`;
+  }
+
+  setInterval(slide, 3000);
+})();
+</script>
+
+
   </body>
 </html>
