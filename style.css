@@ -1491,7 +1491,7 @@ footer{
 .newera-chem-card {
   border-radius: 8px;
   background: #fff;
-  min-height: 320px;
+  min-height: 236px;
   display: flex;
   flex-direction: column;
   box-shadow: -10px 2px 6px rgba(225, 222, 216, 0.1);
