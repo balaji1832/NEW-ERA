@@ -403,71 +403,110 @@ p{
   }
 
 
-
 .stats-section {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 30px 0px;
-      width: 100%;
-    }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 16px; /* mobile-safe padding */
+  width: 100%;
+}
 
-    .stats-container {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: repeat(2, auto);
-      gap: 17px;
-      max-width: 700px;
-      width: 100%;
-    }
+.stats-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  max-width: 720px;
+  width: 100%;
+}
 
-    .stat-card {
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      text-align: left;
-      transition: transform 0.3s ease;
-      min-height: 120px;
-    }
+/* ===== CARD BASE ===== */
+.stat-card {
+  padding: 28px 24px;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-height: 140px;
 
-    .stat-card:hover {
-      transform: translateY(-5px);
-      box-shadow: -10px 10px 15px rgb(33, 33, 33,0.2);
-    }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
-    .stat-card.orange {
-      background-color: #CA661B;
-      color: #fff;
-    }
+/* Hover – subtle & premium */
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: -6px 8px 18px rgba(0, 0, 0, 0.18);
+}
 
-    .stat-card.white {
-      background-color: #fff;
-      color: #000;
-    }
+/* ===== COLORS ===== */
+.stat-card.orange,
+.stat-card.empty {
+  background-color: #CA661B;
+  color: #fff;
+}
 
-    .stat-card h2 {
-      font-size: 2rem;
-      font-weight: 700;
-      margin-bottom: 8px;
-    }
+.stat-card.white {
+  background-color: #fff;
+  color: #111;
+}
 
-    .stat-card p {
-      font-size: 0.95rem;
-      margin: 0;
-      line-height: 1.4;
-    }
+/* ===== TEXT ===== */
+.stat-card h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
 
-    .stat-card.empty {
-      background-color: #CA661B;
-    }
+.stat-card p {
+  font-size: 0.95rem;
+  line-height: 1.45;
+  margin: 0;
+}
 
-    /* No layout change on smaller screens */
-    @media (max-width: 768px) {
-      .stats-container {
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(2, auto);
-      }
-    }
+/* ===== IMAGE CARD FIX ===== */
+.stat-card img {
+  max-width: 100%;
+  height: auto;
+  margin: auto;
+  display: block;
+}
+
+/* ===== TABLET (keep 2×2 but tighter) ===== */
+@media (max-width: 768px) {
+  .stat-card {
+    padding: 24px 20px;
+    min-height: 130px;
+  }
+
+  .stat-card h2 {
+    font-size: 1.75rem;
+  }
+
+  .stat-card p {
+    font-size: 0.9rem;
+  }
+}
+
+
+/* ===== MOBILE: ONE BY ONE, CENTER ===== */
+@media (max-width: 576px) {
+  .stats-container {
+    grid-template-columns: 1fr;   /* one card per row */
+    max-width: 360px;             /* center width */
+    margin: auto;
+  }
+
+  .stat-card {
+    text-align: center;           /* center text */
+    align-items: center;          /* center content */
+  }
+
+  .stat-card img {
+    margin: 0 auto;
+  }
+}
+
 
 /* Timeline container */
    .timeline-container {
