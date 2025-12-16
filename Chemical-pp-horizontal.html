@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Chemical PP, and UHMWPE Horizontal Pumps</title>
+    <title>Chemical PP,PVDF and UHMWPE Horizontal Pumps</title>
     <link rel="icon" href="Images/Group.svg" />
     <link rel="stylesheet" href="style.css" />
     <link
@@ -163,7 +163,7 @@
                         <a
                           href="Chemical-pp-horizontal.html"
                           class="fw-semibold"
-                          >Chemical PP, and UHMWPE Horizontal Pumps</a
+                          >Chemical PP,PVDF and UHMWPE Horizontal Pumps</a
                         >
                         <a href="Chemical-pp-vertical.html" class="fw-semibold"
                           >Chemical PP and UHMWPE Vertical Glandless Pumps</a
@@ -410,6 +410,10 @@
           alt="Banner Image"
           class="img-fluid banner-img w-100"
         />
+        <!-- Animated message on top of banner -->
+    <div class="highlight-message animate-banner">
+      Now available in <strong>PVDF !!</strong>
+    </div>
       </div>
     </section>
 
@@ -421,6 +425,10 @@
           alt="Banner Image"
           class="img-fluid banner-img w-100"
         />
+        <!-- Animated message on top of banner -->
+    <div class="highlight-message animate-banner">
+      Now available in <strong>PVDF !!</strong>
+    </div>
       </div>
     </section>
 
@@ -1272,5 +1280,18 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 </script>
 
+<script>
+  function animateMessage() {
+    const messages = document.querySelectorAll('.highlight-message');
+    messages.forEach(msg => {
+      msg.classList.remove('animate-banner'); // reset
+      void msg.offsetWidth; // trigger reflow
+      msg.classList.add('animate-banner'); // restart animation
+    });
+  }
+
+  // Repeat every 6 seconds
+  setInterval(animateMessage, 6000);
+</script>
   </body>
 </html>
