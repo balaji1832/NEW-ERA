@@ -2005,3 +2005,81 @@ footer{
   user-select: none;
 }
 
+
+/* ================================
+   BOOTSTRAP BENEFITS SECTION
+================================ */
+
+
+
+/* Left image */
+.ne-bs-image-wrap {
+  height: 100%;
+}
+
+.ne-bs-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Right content */
+.ne-bs-content {
+  padding: 50px 40px;
+}
+
+.ne-bs-content h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  font-family: 'Raleway', sans-serif;
+  color: #000;
+}
+
+/* List */
+.ne-bs-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ne-bs-list li {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid #c1bebe
+}
+
+.ne-bs-list li:last-child {
+  border-bottom: none;
+}
+
+.ne-bs-list span {
+  font-weight: 700;
+  font-size: 14px;
+  color: #000;
+}
+
+.ne-bs-list p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* ================================
+   MOBILE ADJUSTMENTS
+================================ */
+
+@media (max-width: 991px) {
+  .ne-bs-content {
+    padding: 30px 24px;
+  }
+
+  .ne-bs-content h2 {
+    font-size: 22px;
+  }
+}
+
